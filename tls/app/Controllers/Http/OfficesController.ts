@@ -8,4 +8,12 @@ export default class OfficesController {
         const offices =  await Office.query()
         return response.status(200).json({id: offices})
     }
+
+    public async store  ({ response, request }: HttpContextContract){
+        const  description = request.only(["description"])
+        // console.log("Ö QUE VEM --->", request.requestBody)
+        const office = await Office.create(description)
+        return response.status(200).json({'resposta': 'sucess', office})
+    }
+
 }
