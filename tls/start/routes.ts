@@ -21,9 +21,8 @@
 import Route from '@ioc:Adonis/Core/Route'
 
 Route.get('/', async () => {
-  return { hello: 'world' }
+  return { hello: 'Do you Rock?' }
 })
 
 Route.resource('/office', 'OfficesController').apiOnly()
-
 Route.resource('/employee', 'EmployeesController').apiOnly()
