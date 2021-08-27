@@ -25,4 +25,5 @@ Route.get('/', async () => {
 })
 
 Route.resource('/office', 'OfficesController').apiOnly()
+
 Route.resource('/employee', 'EmployeesController').apiOnly()

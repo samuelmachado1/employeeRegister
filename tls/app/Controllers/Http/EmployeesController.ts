@@ -17,6 +17,11 @@ export default class EmployeesController {
       'salary',
     ])
     const employee = await Employee.create({ ...bodyRequest })
-    return response.status(200).json({ resposta: 'sucess', employee })
+    return response.status(200).json({
+      resposta: 'sucess',
+      nome: employee.name,
+      last_name: employee.last_name,
+      role: employee.role,
+    })
   }
 }

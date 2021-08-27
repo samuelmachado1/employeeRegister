@@ -10,6 +10,23 @@ export default class OfficesController {
     const description = request.only(['description'])
     const office = await Office.create(description)
     return response.status(200).json({ resposta: 'sucess', office })
-}
+  }
 
+  public async update({ response, request, params }: HttpContextContract) {
+
+    const description = request.only(['description'])
+    // const office = await Office.findOrFail(officeId.id)
+
+    // office.description = officeId.description
+
+    // await office.save()
+
+    await Office.query()
+      .where('id', params.id)
+      .update({ ...description })
+
+     const newOffice = await Office.query().where('id', params.id)
+
+    return response.status(200).json({ resposta: 'sucess', newOffice })
+  }
 }
