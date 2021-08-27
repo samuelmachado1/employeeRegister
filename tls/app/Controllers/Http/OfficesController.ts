@@ -23,4 +23,11 @@ export default class OfficesController {
 
     return response.status(200).json({ resposta: 'sucess', newOffice })
   }
+
+  public async destroy({ response, params }: HttpContextContract) {
+    const office = await Office.findOrFail(params.id)
+    await office.delete()
+
+    return response.status(200).json({ code: 200, status: 'success' })
+  }
 }
