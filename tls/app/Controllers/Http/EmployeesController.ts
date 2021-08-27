@@ -40,6 +40,6 @@ export default class EmployeesController {
   public async destroy({ response, params }: HttpContextContract) {
     await Employee.query().where('cpf', params.id).delete()
 
-    return response.status(200).json({ code: 200, status: 'success' })
+    return response.status(200).json({ code: 200, status: 'Success!' })
   }
 }
