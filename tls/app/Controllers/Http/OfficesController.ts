@@ -13,19 +13,13 @@ export default class OfficesController {
   }
 
   public async update({ response, request, params }: HttpContextContract) {
-
     const description = request.only(['description'])
-    // const office = await Office.findOrFail(officeId.id)
-
-    // office.description = officeId.description
-
-    // await office.save()
 
     await Office.query()
       .where('id', params.id)
       .update({ ...description })
 
-     const newOffice = await Office.query().where('id', params.id)
+    const newOffice = await Office.query().where('id', params.id)
 
     return response.status(200).json({ resposta: 'sucess', newOffice })
   }
