@@ -1,10 +1,8 @@
 import { createAction, createReducer } from "@reduxjs/toolkit";
 
-const API = "http://localhost:3333/employee/";
+const API = "http://localhost:3333/candidates";
 const INITIAL_STATE = {
   items: [],
-  stateItem: [],
-  countyItem: [],
   error: null,
 };
 

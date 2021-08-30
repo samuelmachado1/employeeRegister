@@ -1,13 +1,162 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background: #ADD8E6;
+  color: #29292e;
+
+  
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body, input, textarea, button, p{
+  font:400 16px 'Roboto', sans-serif;
+  color: #29292e;
+}
+
+/* Esse componente envolve toda o HOME */
+#home-aside{
+  display: flex;
+  align-items: stretch;
+  height: 100vh;
+  width: 100%;
+  
+}
+
+/* Componente que envolve todo conteúdo do lado esquerdo da tela HOME.  */
+#aside-component {
+  flex: 6;
+  width: 45%;
+  height: 100%;
+  background: #ffffff;
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 102px 80px ;
+
+}
+
+/* Componente que envolve todo conteúdo do lado direito da tela HOME.  */
+#main-component{
+  flex: 8;
+  width: 65%;
+  
+  height: 100%;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+
+ 
+}
+
+/* Estilização do Título do conteúdo do lado #main-component */
+#strong-main{
+  width: 50%;
+  min-width: 50px;
+  max-width: 450px;
+  position: relative;
+  font-size: 22px;
+  padding-left: 10px;
+  
+
+}
+
+.container-body{
+  /* border: #29292e;
+  border-style: dashed; */
+  max-width: 100px;
+  
+
+}
+
+
+#img-aside{
+  
+  position: center;
+  max-width: 500px;
+}
+
+#strong-aside{
+  text-align: justify;
+}
+
+#p-aside{
+  font-size: 18px;
+  padding-top: 10px;
+  text-align: justify;
+}
+
+
+
+#container-main{
+  margin-top: 150px;
+  display: block;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  align-items: baseline;
+  text-align: justify;
+  border: #29292e;
+  /* border-style: dashed; */
+}
+
+#textField-meso{
+  min-width: 200px;
+  padding-right: 5px;
+}
+
+.container-body{
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  align-items: baseline;
+  text-align: justify;
+}
+
+.container-info{
+  padding-top: 20px;
+  display: block;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  align-items: baseline;
+  text-align: justify;
+}
+
+.div-select{
+  border: #29292e;
+  min-width: 350px;
+  position: flex;
+}
+
+#demo-controlled-open-select{
+  min-width: 450px;
+}
+
+#input-municipio-select{
+  min-width: 450px;
+}
+
+strong{
+  font: 700 36px 'Popins', sans-serif;
+  line-height: 42px;
+  margin-top: 16px;
+  color: #29292e;
+}
+
+#form{
+  padding-top: 5%;
+  border: #29292e;
+  border-style: dashed;
+  max-width: 100%;
+  min-width: 700px;
+  max-height: 100%;
+ 
+  display: flex;
+  flex-direction: line;
 }
