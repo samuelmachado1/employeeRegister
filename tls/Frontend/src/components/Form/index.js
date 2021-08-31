@@ -1,5 +1,10 @@
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
+import Select from "@material-ui/core/Select";
+import InputLabel from "@material-ui/core/InputLabel";
+import FormControl from "@material-ui/core/FormControl";
+
+import MenuItem from "@material-ui/core/MenuItem";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -8,9 +13,17 @@ const useStyles = makeStyles((theme) => ({
       width: "25ch",
     },
   },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
+  },
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+  },
 }));
 
-export default function Form() {
+export default function Form(offices) {
+  //   console.log("-- off -->", offices.offices.id[0].description);
   const classes = useStyles();
   return (
     <div id="form">
@@ -20,6 +33,7 @@ export default function Form() {
           id="outlined-required"
           label="Nome Completo"
           defaultValue="Digite seu nome"
+          //   value={offices.offices.id[0].description}
           variant="outlined"
         />
         <TextField
@@ -36,6 +50,7 @@ export default function Form() {
           defaultValue="Digite seu RG"
           variant="outlined"
         />
+
         <TextField
           id="outlined-required"
           label="Cargo Pretendido"
@@ -144,6 +159,42 @@ export default function Form() {
           defaultValue="Sim/Não"
           variant="outlined"
         />
+        <FormControl variant="outlined" className={classes.formControl}>
+          <InputLabel htmlFor="outlined-age-native-simple">Cargo</InputLabel>
+          <Select
+            native
+            value={MenuItem.value}
+            // onChange={handleChange}
+            label="Office"
+            inputProps={{
+              name: "office",
+              id: "outlined-age-native-simple",
+            }}
+          >
+            {offices.offices.id
+              ? offices.offices.id.map((office) => (
+                  <option value={office.id}>{office.description}</option>
+                ))
+              : null}
+          </Select>
+        </FormControl>
+
+        {/* <Select
+          labelId="demo-simple-select-placeholder-label-label"
+          id="demo-simple-select-placeholder-label"
+          value={MenuItem.value}
+          // onChange={handleChange}
+          displayEmpty
+          className={classes.selectEmpty}
+        >
+          {offices.offices.id ? (
+            offices.offices.id.map((office) => (
+              <MenuItem value={office.id}>{office.description}</MenuItem>
+            ))
+          ) : (
+            <em>None</em>
+          )}
+        </Select> */}
       </form>
     </div>
   );

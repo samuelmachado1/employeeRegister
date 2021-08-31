@@ -2,15 +2,15 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Form from "../components/Form/index";
 
-import { fetchEmployee } from "../store/employee";
+import { fetchOffices } from "../store/data";
 
 export function Home() {
-  const employee = useSelector((employee) => console.log("__>", employee));
+  const offices = useSelector((office) => office.data.offices);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchEmployee());
+    dispatch(fetchOffices());
   }, [dispatch]);
 
   return (
@@ -22,7 +22,7 @@ export function Home() {
         </p>
       </aside>
       <aside id="main-component">
-        <Form />
+        <Form offices={offices} />
       </aside>
     </div>
   );

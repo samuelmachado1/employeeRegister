@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import employee from "./employee";
+import data from "./data";
 
 export default configureStore({
   reducer: {
-    employee,
+    data,
   },
 });
