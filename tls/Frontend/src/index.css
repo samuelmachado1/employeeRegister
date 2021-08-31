@@ -160,3 +160,15 @@ strong{
   display: flex;
   flex-direction: line;
 }
+
+#alignForm{
+  padding-left: 15%;
+  /* border: #29aaaa;
+  border-style: dashed; */
+  max-width: 100%;
+  min-width: 150px;
+  max-height: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: line;
+}
